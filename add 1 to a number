@@ -18,7 +18,7 @@ void output(int b)
 }
 int main()
 {
-	int x,y,z;
+	int x,y;
 	x=input();
 	y=compute(x);
 	output(y);
