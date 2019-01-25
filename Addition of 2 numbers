@@ -1,0 +1,24 @@
+#include<stdio.h>
+int input2nos(int *x,int *y)
+{
+    printf("Enter two numbers");
+    scanf("%d",&*x);
+    scanf("%d",&*y);
+}
+int add2nos(int a,int b)
+{
+    int c;
+    c=a+b;
+    return c;
+}
+int output(int c)
+{
+    printf("Sum=%d",c);
+}
+void main()
+{
+    int f,g,h;
+    input2nos(&f,&g);
+    h=add2nos(f,g);
+    output(h);
+}
