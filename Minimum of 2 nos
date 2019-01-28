@@ -1,0 +1,25 @@
+#include<stdio.h>
+int input(int *x,int *y)
+{
+	printf("Enter two numbers");
+	scanf("%d%d",&*x,&*y);
+}
+int minimum(int a,int b)
+{
+	if(a<b)
+	return a;
+	else
+	return b;
+}
+int output(int c)
+{
+	printf("The minimum among the two numbers=%d",c);
+	return c;
+}
+void main()
+{
+	int f,g,h;
+	input(&f,&g);
+	h=minimum(f,g);
+	output(h);
+}
