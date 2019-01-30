@@ -1,0 +1,35 @@
+#include<stdio.h>
+int input(int f,int n[])
+{
+	int i;
+	for(i=0;i<f;i++)
+	{
+	
+		printf("Enter the number");
+		scanf("%d",&n[i]); 
+	        
+	}
+}
+int compute(int f,int m[])
+{
+	int i;int sum;sum=0;
+	for(i=0;i<f;i++)
+	{
+		sum+=m[i];
+	}
+	return sum;
+}
+int output(int g)
+{
+	printf("The sum of the given numbers is %d",g);
+}
+void main()
+{
+	int f,g,h,i;
+	printf("Enter the no of numbers you would like to add");
+	scanf("%d",&f);
+	int n[f];
+	input(f,n);
+	i=compute(f,n);
+	output(i);
+}
