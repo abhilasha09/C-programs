@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<math.h>
+double input(int n,double a[],double x)
+{
+	int i;
+	for(i=0;i<=n;i++)
+	{
+		printf("Enter the coefficient of x^%d \n",i);
+		scanf("%lf",&a[i]);
+	}
+
+}
+double compute(double a[],int n,double x)
+{
+	double res;
+	res=0;
+	int i;
+	for(i=0;i<=n;i++)
+	{
+		double o;
+		o=(double)i;
+		double d;
+   		d=pow(x,o);
+		res+=((a[i])*(d));
+	}
+	return res;
+}
+void output(double res)
+{
+	printf("The Value of the polynomial is %lf \n",res);
+}
+void main()
+{
+	int n;double x;
+	printf("Enter the degree of the polynomial \n");
+	scanf("%d",&n);
+	printf("Enter the value of x \n");
+	scanf("%lf",&x);
+	double a[n+1];double i;
+	input(n,a,x);
+	i=compute(a,n,x);
+	output(i);
+}
