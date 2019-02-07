@@ -1,0 +1,39 @@
+#include<stdio.h>
+int input(int a[],int x,int n)
+{
+	int i;
+	for(i=0;i<=n;i++)
+	{
+		printf("Enter the coefficient of x^%d\n",i);
+		scanf("%d",&a[i]);
+	}
+}
+int compute(int a[],int x,int n)
+{
+	int res;
+	res=0;
+	int i;
+	for(i=n;i>0;i--)
+	{
+		res=res*x+a[i];
+	}
+	return res;
+}
+void output(int b)
+{
+	printf("The value of the polynomial=%d",b);
+}
+void main()
+{
+	int n;
+	printf("Enter the degree of the polynomial");
+	scanf("%d",&n);
+	int x;
+	printf("Enter the value of x");
+	scanf("%d",&x);
+	int a[n+1];
+	int h;
+	input(a,x,n);
+	h=compute(a,x,n);
+	output(h);
+}
