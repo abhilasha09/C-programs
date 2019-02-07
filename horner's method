@@ -13,7 +13,7 @@ int compute(int a[],int x,int n)
 	int res;
 	res=0;
 	int i;
-	for(i=n;i>0;i--)
+	for(i=n;i>=0;i--)
 	{
 		res=res*x+a[i];
 	}
