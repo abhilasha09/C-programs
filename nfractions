@@ -1,0 +1,55 @@
+#include<stdio.h>
+struct fraction
+{
+	
+	int num[30];
+	int den[30];
+};
+struct fr
+{
+int m;
+int n;
+};
+int input(int n,struct fraction *f1)
+{
+	for(int i=0;i<n;i++)
+	{
+	printf("Enter the value of numerator%d",i+1);
+	scanf("%d",&f1->num[i]);
+	printf("Enter the value of denominator%d",i+1);
+	scanf("%d",&f1->den[i]);
+	}
+}
+struct fr sumoffraction(struct fraction f1,int n)
+{
+	
+	struct fr sum;
+	struct fraction f2;
+	sum.m=1;
+	sum.n=1;int num1,num2;int den1,den2;
+	for(int i=0;i<=n;i++)
+	{
+	den1=f1.den[i];
+	num1=f1.num[i];
+	
+	sum.m+=()*(den1)+(den2)*(num1);
+	sum.n+=(sum.n)*(den1);
+	}
+return sum;
+}
+
+int output(struct fr sum)
+{
+	printf("%d/%d",sum.m,sum.n);
+}
+void main()
+{	
+	struct fr h;
+	int n;
+	printf("Enter the no.of fractions");
+	scanf("%d",&n);
+	struct fraction f;
+	input(n,&f);
+	h=sumoffraction(f,n);
+	output(h);
+}
