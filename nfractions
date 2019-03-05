@@ -1,52 +1,49 @@
 #include<stdio.h>
-
 struct fraction
 {
-	
-	int num[30];
-	int den[30];
+	int num;
+	int den;
 };
-int input(int n,struct fraction *f1)
+struct fraction a[100];
+int input(int n,struct fraction *a[])
 {
 	for(int i=0;i<n;i++)
 	{
 	printf("Enter the value of numerator%d",i+1);
-	scanf("%d",&f1->num[i]);
+	scanf("%d",&a[i]->num);
 	printf("Enter the value of denominator%d",i+1);
-	scanf("%d",&f1->den[i]);
+	scanf("%d",&a[i]->den);
 	}
 }
-struct fraction sumoffraction(struct fraction f1,int n)
+void sumoffrac(int n,struct fraction a[],struct fraction *sum[n])
 {
-	struct fraction sum;
+	struct fraction f1[n];
 	int num1,num2;int den1,den2;
-	num2=f1.num[0];
-	den2=f1.den[0];
+	num2=a[0].num;
+	den2=a[0].den;
 	for(int i=1;i<n;i++)
 	{
-	den1=f1.den[i];
-	num1=f1.num[i];
-	sum.num[i]=(num2)*(den1)+(den2)*(num1);
-	sum.den[i]=(den2)*(den1);
-	num2=sum.num[i];
-	den2=sum.den[i];
+	den1=f1[i].den;
+	num1=f1[i].num;
+	sum[i].num=(num2)*(den1)+(den2)*(num1);
+	sum[i].den=(den2)*(den1);
+	num2=sum[i].num;
+	den2=sum[i].den;
 	}
-	return sum;
+	
 }
-
-
-int output(struct fraction sum,int n)
+int output(struct fraction sum[],int n)
 {
-	printf("%d/%d",sum.num[n-1],sum.den[n-1]);
+	printf("%d/%d",sum[n-1].num,sum[n-1].den);
 }
 void main()
 {	
-	struct fraction h;struct fraction sum;
 	int n;
-	printf("Enter the no.of fractions");
+	printf("Enter the number of fractions");
 	scanf("%d",&n);
-	struct fraction f;
+	struct fraction sum[n];
+	struct fraction f[n];
 	input(n,&f);
-	sum=sumoffraction(f,n);
+	sumoffrac(n,f,&sum);
 	output(sum,n);
 }
