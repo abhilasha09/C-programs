@@ -16,36 +16,41 @@ void input(int n,struct fraction a[])
 	}
 	
 }
-int compute(int n,struct fraction a[],int *w)
+struct fraction compute(int n,struct fraction a[])
 {
-int i;int s;int p=1;int sum;sum=0;
-for(i=0;i<n;i++)
-{
-s=a[i].den;
-p=p*s;
+	int i;
+	int s;
+	int p=1;
+	int sum=0;
+	struct fraction b;
+	for(i=0;i<n;i++)
+	{
+		s=a[i].den;
+		p=p*s;
+	}
+	for(i=0;i<n;i++)
+	{
+		int o,m;
+		o=a[i].num;
+		m=a[i].den;
+		sum=sum+(p*o)/m;
+	}
+	b.num=sum;
+	b.den=p;
+	return b;
 }
-*w=p;
-for(i=0;i<n;i++)
+void output(struct fraction b)
 {
-int o,m;
-o=a[i].num;
-m=a[i].den;
-sum=sum+(p*o)/m;
-}
-return sum;
-}
-void output(int p,int o)
-{
-printf("The sum of the fractions is %d/%d",o,p);
+	printf("The sum of the fractions is %d/%d",b.num,b.den);
 }
 int main()
 {
-int n;
-printf("Enter the no of fractions");
-scanf("%d",&n);int p;int o;
-struct fraction a[n];
-input(n,a);
-o=compute(n,a,&p);
-output(p,o);
-return 0;
+	int n;
+	printf("Enter the no of fractions");
+	scanf("%d",&n);int p;int o;
+	struct fraction a[n];struct fraction b;
+	input(n,a);
+	b=compute(n,a);
+	output(b);
+	return 0;
 }
